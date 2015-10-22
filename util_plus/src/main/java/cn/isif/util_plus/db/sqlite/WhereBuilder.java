@@ -52,7 +52,7 @@ public class WhereBuilder {
      * create new instance
      *
      * @param columnName
-     * @param op         operator: "=","<","LIKE","IN","BETWEEN"...
+     * @param op
      * @param value
      * @return
      */
@@ -66,7 +66,7 @@ public class WhereBuilder {
      * add AND condition
      *
      * @param columnName
-     * @param op         operator: "=","<","LIKE","IN","BETWEEN"...
+     * @param op
      * @param value
      * @return
      */
@@ -79,7 +79,7 @@ public class WhereBuilder {
      * add OR condition
      *
      * @param columnName
-     * @param op         operator: "=","<","LIKE","IN","BETWEEN"...
+     * @param op
      * @param value
      * @return
      */

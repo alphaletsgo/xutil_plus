@@ -50,7 +50,8 @@ public class URLEncodedUtils {
 
     /**
      * Returns true if the entity's Content-Type header is
-     * <code>application/x-www-form-urlencoded</code>.
+     * @param entity
+     * @return
      */
     public static boolean isEncoded(final HttpEntity entity) {
         Header h = entity.getContentType();
@@ -69,13 +70,12 @@ public class URLEncodedUtils {
 
     /**
      * Returns a list of {@link org.apache.http.NameValuePair NameValuePairs} as built from the
-     * URI's query portion. For example, a URI of
-     * http://example.org/path/to/file?a=1&b=2&c=3 would return a list of three
-     * NameValuePairs, one for a=1, one for b=2, and one for c=3.
-     * <p/>
+     * URI's query portion.
+     *
      * This is typically useful while parsing an HTTP PUT.
      *
-     * @param uri uri to parse
+     * @param uri
+     * @return
      */
     public static List<NameValuePair> parse(final URI uri) {
         final String query = uri.getRawQuery();
@@ -91,9 +91,6 @@ public class URLEncodedUtils {
 
     /**
      * Adds all parameters within the Scanner to the list of <code>parameters</code>.
-     * For example,a scanner containing the string <code>a=1&b=2&c=3</code> would
-     * add the {@link org.apache.http.NameValuePair NameValuePairs} a=1, b=2, and c=3 to the
-     * list of parameters.
      *
      * @param parameters List to add parameters to.
      * @param scanner    Input that contains the parameters to parse.
@@ -124,6 +121,7 @@ public class URLEncodedUtils {
      *
      * @param s text to parse.
      * @since 4.2
+     * @return
      */
     public static List<NameValuePair> parse(final String s) {
         if (s == null) {
@@ -149,6 +147,7 @@ public class URLEncodedUtils {
      *
      * @param parameters The parameters to include.
      * @param charset    The encoding to use.
+     * @return
      */
     public static String format(
             final List<? extends NameValuePair> parameters,
@@ -176,6 +175,7 @@ public class URLEncodedUtils {
      * @param parameters The parameters to include.
      * @param charset    The encoding to use.
      * @since 4.2
+     * @return
      */
     public static String format(
             final Iterable<? extends NameValuePair> parameters,

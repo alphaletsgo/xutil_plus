@@ -216,7 +216,7 @@ public class URIBuilder {
 
     /**
      * Sets URI query.
-     * <p/>
+     * 
      * The value is expected to be encoded form data.
      */
     public URIBuilder setQuery(final String query) {

@@ -112,7 +112,7 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
      * Override this method to perform a computation on a background thread. The
      * specified parameters are the parameters passed to {@link #execute}
      * by the caller of this task.
-     * <p/>
+     * 
      * This method can call {@link #publishProgress} to publish updates
      * on the UI thread.
      *
@@ -134,10 +134,10 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
     }
 
     /**
-     * <p>Runs on the UI thread after {@link #doInBackground}. The
-     * specified result is the value returned by {@link #doInBackground}.</p>
-     * <p/>
-     * <p>This method won't be invoked if the task was cancelled.</p>
+     * Runs on the UI thread after {@link #doInBackground}. The
+     * specified result is the value returned by {@link #doInBackground}.
+     * 
+     * This method won't be invoked if the task was cancelled.
      *
      * @param result The result of the operation computed by {@link #doInBackground}.
      * @see #onPreExecute
@@ -161,12 +161,12 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
     }
 
     /**
-     * <p>Runs on the UI thread after {@link #cancel(boolean)} is invoked and
-     * {@link #doInBackground(Object[])} has finished.</p>
-     * <p/>
-     * <p>The default implementation simply invokes {@link #onCancelled()} and
+     * Runs on the UI thread after {@link #cancel(boolean)} is invoked and
+     * {@link #doInBackground(Object[])} has finished.
+     * 
+     * The default implementation simply invokes {@link #onCancelled()} and
      * ignores the result. If you write your own implementation, do not call
-     * <code>super.onCancelled(result)</code>.</p>
+     * <code>super.onCancelled(result)</code>.
      *
      * @param result The result, if any, computed in
      *               {@link #doInBackground(Object[])}, can be null
@@ -179,12 +179,12 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
     }
 
     /**
-     * <p>Applications should preferably override {@link #onCancelled(Object)}.
+     * Applications should preferably override {@link #onCancelled(Object)}.
      * This method is invoked by the default implementation of
-     * {@link #onCancelled(Object)}.</p>
-     * <p/>
-     * <p>Runs on the UI thread after {@link #cancel(boolean)} is invoked and
-     * {@link #doInBackground(Object[])} has finished.</p>
+     * {@link #onCancelled(Object)}.
+     * 
+     * Runs on the UI thread after {@link #cancel(boolean)} is invoked and
+     * {@link #doInBackground(Object[])} has finished.
      *
      * @see #onCancelled(Object)
      * @see #cancel(boolean)
@@ -351,7 +351,7 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
      * publish updates on the UI thread while the background computation is
      * still running. Each call to this method will trigger the execution of
      * {@link #onProgressUpdate} on the UI thread.
-     * <p/>
+     * 
      * {@link #onProgressUpdate} will note be called if the task has been
      * canceled.
      *
